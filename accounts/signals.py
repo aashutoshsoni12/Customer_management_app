@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from .models import Customer
 from django.contrib.auth.models import Group
 
-
+# Signal to trigger user profile with user.
 def user_profile(sender, instance, created, **kwargs):
     if created:
         group = Group.objects.get(name='user')
